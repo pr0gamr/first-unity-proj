@@ -16,7 +16,7 @@ public class moselook : MonoBehaviour
     {
         turn.x += Input.GetAxis("Mouse X") * sensitivity;
         turn.y += Input.GetAxis("Mouse Y") * sensitivity;
-        transform.localRotation = Quaternion.Euler(-turn.y, turn.x, 0);
+        transform.localRotation = Quaternion.Euler(-turn.y, turn.x*0, 0);
     }
 }
 
