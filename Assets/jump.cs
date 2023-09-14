@@ -30,16 +30,5 @@ public class jump : MonoBehaviour
             isMoving = true;
             Debug.Log("jump");
         }
-
-        if (isMoving)
-        {
-            // when the cube has moved for 10 seconds, report its position
-            time = time + Time.fixedDeltaTime;
-            if (time > 1.0f)
-            {
-                Debug.Log(gameObject.transform.position.y + " : " + time);
-                time = 0.0f;
-            }
-        }
     }
 }

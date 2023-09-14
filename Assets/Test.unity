@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 590392667}
   - component: {fileID: 590392666}
   - component: {fileID: 590392665}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -705,14 +705,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325162247}
-  m_LocalRotation: {x: 0.17521715, y: 0.033972595, z: -0.006049833, w: 0.983925}
-  m_LocalPosition: {x: 0.000000037550475, y: 1.1100001, z: -4.09}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 590392664}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 20.195, y: 3.955, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1325162251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1065,8 +1065,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 96
-  m_CollisionDetection: 0
+  m_Constraints: 106
+  m_CollisionDetection: 1
 --- !u!114 &1994707572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1082,7 +1082,7 @@ MonoBehaviour:
   turn: {x: 0, y: 0}
   sensitivity: 3
   deltaMove: {x: 0, y: 0, z: 0}
-  speed: 0.01
+  speed: 0.05
 --- !u!114 &1994707573
 MonoBehaviour:
   m_ObjectHideFlags: 0
