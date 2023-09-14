@@ -5,11 +5,19 @@ using UnityEngine;
 public class jump : MonoBehaviour
 {
  public Rigidbody rb;
+ 
 
     private float time = 0.0f;
     private bool isMoving = false;
     private bool isJumpPressed = false;
+    private float _distanceToTheGround = 0.0f;
 
+
+    bool CheckGround()
+    {
+        _distanceToTheGround = GetComponent<Collider>().bounds.extents.y;
+        return Physics.Raycast(transform.position, Vector3.down, _distanceToTheGround + 0.1f);
+    }
 
     void Start()
     {
@@ -18,17 +26,22 @@ public class jump : MonoBehaviour
 
     void Update()
     {
-        isJumpPressed = Input.GetButtonDown("Jump");
+        if(CheckGround())
+        {
+         isJumpPressed = Input.GetButtonDown("Jump");
+            if (isJumpPressed)
+         {
+             // the cube is going to move upwards in 10 units per second
+             rb.velocity = new Vector3(0, 10, 0);
+              isMoving = true;
+              Debug.Log("jump");
+           }
+        }
     }
 
     void FixedUpdate()
     {
-        if (isJumpPressed)
-        {
-            // the cube is going to move upwards in 10 units per second
-            rb.velocity = new Vector3(0, 10, 0);
-            isMoving = true;
-            Debug.Log("jump");
-        }
+       
     }
 }
+   
