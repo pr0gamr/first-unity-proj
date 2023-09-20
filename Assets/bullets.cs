@@ -14,12 +14,14 @@ public class bullets : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-       rb.velocity = new Vector3(0, 0, 10);
-       Vector3 direction = Vector3.forward;
+        rb.velocity = transform.forward * (10f);
     }
 }
+
+//look here for fixing prob maybe https://www.youtube.com/watch?v=wZ2UUOC17AY
