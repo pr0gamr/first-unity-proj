@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    private bool isshootpressed = false;
-    public GameObject objectToSpawn;
+    public Rigidbody objectToSpawn;
+    public Transform barrelEnd;
 
     void Update()
     {
-        isshootpressed = Input.GetButtonDown("Fire1");
-        if (isshootpressed)
+        if (Input.GetButtonDown("Fire1"))
         {
-       Instantiate(objectToSpawn);
-       Debug.Log("shoot");
+            Rigidbody bullet;
+            bullet = Instantiate(objectToSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
+            bullet.GetComponent<Rigidbody>().AddForce(barrelEnd.forward * 2250);
+            Debug.Log("shoot");
         }
     }
 }
-//
