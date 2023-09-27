@@ -6,6 +6,7 @@ public class Shoot : MonoBehaviour
 {
     public Rigidbody objectToSpawn;
     public Transform barrelEnd;
+    public Transform direction;
 
     void Update()
     {
@@ -13,7 +14,7 @@ public class Shoot : MonoBehaviour
         {
             Rigidbody bullet;
             bullet = Instantiate(objectToSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
-            bullet.GetComponent<Rigidbody>().AddForce(barrelEnd.forward * 5000);
+            bullet.GetComponent<Rigidbody>().AddForce(direction.forward * 5000);
             Debug.Log("shoot");
         }
     }
