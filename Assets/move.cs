@@ -21,6 +21,6 @@ public class move : MonoBehaviour
         turn.y += Input.GetAxis("Mouse Y") * sensitivity;
         transform.localRotation = Quaternion.Euler(0,turn.x, 0);
 
-        transform.Translate(Input.GetAxisRaw("Horizontal") * speed, 0, Input.GetAxisRaw("Vertical") * speed);
+        //transform.Translate(Input.GetAxisRaw("Horizontal") * speed, 0, Input.GetAxisRaw("Vertical") * speed);
     }
 }

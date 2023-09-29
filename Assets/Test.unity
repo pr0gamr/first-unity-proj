@@ -9137,7 +9137,7 @@ TerrainCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878927981}
   m_Material: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_TerrainData: {fileID: 15600000, guid: 053f4220f51a93343922895c20d5da73, type: 2}
   m_EnableTreeColliders: 0
 --- !u!218 &1878927983
@@ -9160,9 +9160,9 @@ Terrain:
   m_SplatMapDistance: 26
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
-  m_DrawHeightmap: 1
-  m_DrawInstanced: 1
-  m_DrawTreesAndFoliage: 1
+  m_DrawHeightmap: 0
+  m_DrawInstanced: 0
+  m_DrawTreesAndFoliage: 0
   m_StaticShadowCaster: 0
   m_ReflectionProbeUsage: 1
   m_MaterialTemplate: {fileID: 10652, guid: 0000000000000000f000000000000000, type: 0}
@@ -9299,6 +9299,7 @@ GameObject:
   - component: {fileID: 1994707570}
   - component: {fileID: 1994707572}
   - component: {fileID: 1994707573}
+  - component: {fileID: 1994707574}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -9443,6 +9444,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1994707571}
+--- !u!114 &1994707574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994707565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 204fe6c0e947104489318782f03ecaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HorizontalInput: 0
+  VerticalInput: 0
+  speed: 10
 --- !u!1001 &2011562132
 PrefabInstance:
   m_ObjectHideFlags: 0
