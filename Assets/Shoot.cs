@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public Rigidbody objectToSpawn;
+    public Rigidbody objectTwoSpawn;
     public Transform barrelEnd;
     public Transform direction;
 
@@ -16,6 +17,13 @@ public class Shoot : MonoBehaviour
             bullet = Instantiate(objectToSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
             bullet.GetComponent<Rigidbody>().AddForce(direction.forward * 5000);
             Debug.Log("shoot");
+        }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Rigidbody bullet2;
+            bullet2 = Instantiate(objectTwoSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
+            bullet2.GetComponent<Rigidbody>().AddForce(direction.forward * 5000);
+            Debug.Log("shoot2");
         }
     }
 }

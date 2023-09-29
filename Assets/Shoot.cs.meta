@@ -4,7 +4,10 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - objectToSpawn: {fileID: 4173639805274679638, guid: c26550edb1062554b92e75e3019b18f0, type: 3}
+  - objectToSpawn: {fileID: 5599068625681664558, guid: c26550edb1062554b92e75e3019b18f0, type: 3}
+  - objectTwoSpawn: {fileID: 7443674311801684144, guid: ceea95d02600f804b8d7549c1a28a7b5, type: 3}
+  - barrelEnd: {instanceID: 0}
+  - direction: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
