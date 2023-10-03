@@ -7,6 +7,7 @@ public class move2 : MonoBehaviour
     public float HorizontalInput;
     public float VerticalInput;
     public float speed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class move2 : MonoBehaviour
         HorizontalInput = Input.GetAxis("Horizontal");
         VerticalInput = Input.GetAxis("Vertical");
 
+        //Rigidbody.velocity = new Vector3(Vector3.forward * Time.deltaTime * VerticalInput * speed, Vector3.right * Time.deltaTime * HorizontalInput * speed);}
         transform.Translate(Vector3.forward * Time.deltaTime * VerticalInput * speed);
         transform.Translate(Vector3.right * Time.deltaTime * HorizontalInput * speed);
     }

@@ -6,7 +6,7 @@ public class jump : MonoBehaviour
 {
  public Rigidbody rb;
  
-
+    private bool isJetPressed = false;
     private bool isJumpPressed = false;
     private float _distanceToTheGround = 0.0f;
 
@@ -34,6 +34,12 @@ public class jump : MonoBehaviour
               Debug.Log("jump");
            }
         }
+         isJetPressed = Input.GetButton("Jet");
+            if (isJetPressed)
+            {
+                rb.velocity = new Vector3(0, 10, 0);
+                Debug.Log("jet");
+            }
     }
 }
    
