@@ -22,5 +22,9 @@ public class scenes : MonoBehaviour
         {
             SceneManager.LoadScene("Destructable");
         }
+                if (Input.GetButtonDown("Scene3"))
+        {
+            SceneManager.LoadScene("flash");
+        }
     }
 }
