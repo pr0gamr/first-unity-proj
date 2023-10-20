@@ -7,6 +7,9 @@ public class Shoot : MonoBehaviour
     public Rigidbody objectToSpawn;
     public Rigidbody objectTwoSpawn;
     public Rigidbody objectThreeSpawn;
+    public Rigidbody objectFourSpawn;
+    public Transform Objectarrow;
+    public Rigidbody objectFiveSpawn;
     public Transform barrelEnd;
     public Transform direction;
     float LoadOut = 1;
@@ -48,13 +51,24 @@ public class Shoot : MonoBehaviour
                 bullet3.GetComponent<Rigidbody>().AddForce(direction.forward * 50000);
                 Debug.Log("shoot3");
             }
+            if (Input.GetButtonDown("Fire2"))
+            {
+                Rigidbody bullet2;
+                bullet2 = Instantiate(objectFourSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
+                bullet2.GetComponent<Rigidbody>().AddForce(direction.forward * 5000);
+                Debug.Log("shoot2");
+            }
         }
         else if (LoadOut == 3)
         {
             if(Input.GetButtonDown("Fire1"))
             {
-
+                Rigidbody bullet3;
+                bullet3 = Instantiate(objectFiveSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
+                bullet3.GetComponent<Rigidbody>().AddForce(direction.forward * 500000);
+                Debug.Log("sniper");
             }
+            
             if (Input.GetButton("Fire2"))
             {
                 m_FieldOfView = 10f;
