@@ -26,5 +26,9 @@ public class scenes : MonoBehaviour
         {
             SceneManager.LoadScene("flash");
         }
+                if (Input.GetButtonDown("Scene4"))
+        {
+            SceneManager.LoadScene("testing");
+        }
     }
 }
