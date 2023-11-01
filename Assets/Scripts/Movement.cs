@@ -19,6 +19,8 @@ public class Movement : MonoBehaviour
     public float jumpHeight = 6f;
     float velocityY;
     bool isGrounded;
+    bool isSprint;
+    bool isCrouch;
  
     float cameraCap;
     Vector2 currentMouseDelta;
@@ -44,6 +46,17 @@ public class Movement : MonoBehaviour
     {
         UpdateMouse();
         UpdateMove();
+
+        Speed = 6.0f;
+
+        if (Input.GetButton("Crouch"))
+        {
+            Speed = 3.0f;
+        }
+        else if (Input.GetButton("Sprint"))
+        {
+            Speed = 9.0f;
+        }
     }
  
     void UpdateMouse()

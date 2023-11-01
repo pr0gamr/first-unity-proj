@@ -15,6 +15,8 @@ public class Shoot : MonoBehaviour
     float LoadOut = 1;
     float m_FieldOfView;
     float Sensitivity;
+    bool reloading;
+    float ARfireDown;
 
     void start()
     {
@@ -25,13 +27,18 @@ public class Shoot : MonoBehaviour
     {
         m_FieldOfView = 60.0f;
         Sensitivity = 2.8f;
+        if(ARfireDown > 0)
+        {
+            ARfireDown -= 1;
+        }
         if (LoadOut == 1)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButton("Fire1") && ARfireDown == 0)
             {
                 Rigidbody bullet;
                 bullet = Instantiate(objectToSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
                 bullet.GetComponent<Rigidbody>().AddForce(direction.forward * 7500);
+                ARfireDown = 25;
                 Debug.Log("shoot");
             }
             if (Input.GetButtonDown("Fire2"))
