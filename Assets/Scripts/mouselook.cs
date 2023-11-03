@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moselook : MonoBehaviour
+public class mouselook : MonoBehaviour
 {
     public Vector2 turn;
     public float sensitivity = .5f;

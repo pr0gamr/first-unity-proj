@@ -18,17 +18,25 @@ public class scenes : MonoBehaviour
         {
             SceneManager.LoadScene("Test");
         }
-                if (Input.GetButtonDown("Scene2"))
+
+        else if (Input.GetButtonDown("Scene2"))
         {
             SceneManager.LoadScene("Destructable");
         }
-                if (Input.GetButtonDown("Scene3"))
+
+        else if (Input.GetButtonDown("Scene3"))
         {
             SceneManager.LoadScene("flash");
         }
-                if (Input.GetButtonDown("Scene4"))
+
+        else if (Input.GetButtonDown("Scene4"))
         {
             SceneManager.LoadScene("testing");
+        }
+
+        else if (Input.GetButtonDown("Scene5"))
+        {
+            SceneManager.LoadScene("Terrain");
         }
     }
 }

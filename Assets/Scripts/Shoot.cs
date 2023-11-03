@@ -39,14 +39,14 @@ public class Shoot : MonoBehaviour
                 bullet = Instantiate(objectToSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
                 bullet.GetComponent<Rigidbody>().AddForce(direction.forward * 7500);
                 ARfireDown = 25;
-                Debug.Log("shoot");
+                //Debug.Log("shoot");
             }
             if (Input.GetButtonDown("Fire2"))
             {
                 Rigidbody bullet2;
                 bullet2 = Instantiate(objectTwoSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
                 bullet2.GetComponent<Rigidbody>().AddForce(direction.forward * 5000);
-                Debug.Log("shoot2");
+                //Debug.Log("shoot2");
             }
         }
         else if (LoadOut == 2)
@@ -56,14 +56,14 @@ public class Shoot : MonoBehaviour
                 Rigidbody bullet3;
                 bullet3 = Instantiate(objectThreeSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
                 bullet3.GetComponent<Rigidbody>().AddForce(direction.forward * 50000);
-                Debug.Log("shoot3");
+                //Debug.Log("shoot3");
             }
             if (Input.GetButtonDown("Fire2"))
             {
                 Rigidbody bullet2;
                 bullet2 = Instantiate(objectFourSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
                 bullet2.GetComponent<Rigidbody>().AddForce(direction.forward * 5000);
-                Debug.Log("shoot2");
+                //Debug.Log("shoot2");
             }
         }
         else if (LoadOut == 3)
@@ -73,7 +73,7 @@ public class Shoot : MonoBehaviour
                 Rigidbody bullet3;
                 bullet3 = Instantiate(objectFiveSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
                 bullet3.GetComponent<Rigidbody>().AddForce(direction.forward * 500000);
-                Debug.Log("sniper");
+                //Debug.Log("sniper");
             }
             
             if (Input.GetButton("Fire2"))
@@ -99,5 +99,22 @@ public class Shoot : MonoBehaviour
             Debug.Log(LoadOut);
         }
         Camera.main.fieldOfView = m_FieldOfView;
+    }
+
+    void OnGUI() 
+    {
+        GUI.Label(new Rect(10, 10, 500, 20), "loadout : " + LoadOut.ToString());
+        if(LoadOut == 1)
+        {
+            GUI.Label(new Rect(10, 25, 500, 20), "Left click : Assault rifle" + " | Right click : Bounce shot");
+        }
+        else if(LoadOut == 2)
+        {
+            GUI.Label(new Rect(10, 25, 500, 20), "Left click : Cannon ball" + " | Right click : Ballista shot");
+        }
+        else if(LoadOut == 3)
+        {
+            GUI.Label(new Rect(10, 25, 500, 20), "Left click : Sniper rifle" + " | Right click : Zoom");
+        }
     }
 }
