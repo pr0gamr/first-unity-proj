@@ -72,7 +72,7 @@ public class Shoot : MonoBehaviour
             {
                 Rigidbody bullet3;
                 bullet3 = Instantiate(objectFiveSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
-                bullet3.GetComponent<Rigidbody>().AddForce(direction.forward * 500000);
+                bullet3.GetComponent<Rigidbody>().AddForce(direction.forward * 5000000);
                 //Debug.Log("sniper");
             }
             

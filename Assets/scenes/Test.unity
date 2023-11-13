@@ -2282,7 +2282,7 @@ GameObject:
   - component: {fileID: 434196717}
   - component: {fileID: 434196716}
   - component: {fileID: 434196715}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2563,7 +2563,7 @@ GameObject:
   - component: {fileID: 504332489}
   - component: {fileID: 504332488}
   - component: {fileID: 504332487}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5432,6 +5432,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4675052200415314323, guid: 93ee8f9081ab8fb4ab430ad61e83c4b4, type: 3}
+      propertyPath: direction
+      value: 
+      objectReference: {fileID: 1608037205}
     - target: {fileID: 1301851501243044754, guid: 93ee8f9081ab8fb4ab430ad61e83c4b4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5494,7 +5498,7 @@ GameObject:
   - component: {fileID: 1097532945}
   - component: {fileID: 1097532944}
   - component: {fileID: 1097532943}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6542,6 +6546,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: slab_1
       objectReference: {fileID: 0}
+    - target: {fileID: 1152943963735174, guid: 5c146077bdeb6394ba02514ef95f07b0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4380875672191972, guid: 5c146077bdeb6394ba02514ef95f07b0, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -7056,7 +7064,7 @@ GameObject:
   - component: {fileID: 1467337341}
   - component: {fileID: 1467337340}
   - component: {fileID: 1467337339}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7455,6 +7463,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 368393f9b1a9c7840ac8af597f29afdc, type: 3}
+--- !u!4 &1608037205 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7441412640806396131, guid: 93ee8f9081ab8fb4ab430ad61e83c4b4, type: 3}
+  m_PrefabInstance: {fileID: 1058110353}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1616429544
 GameObject:
   m_ObjectHideFlags: 0
