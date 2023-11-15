@@ -9,6 +9,7 @@ using UnityEngine;
 public class bullets : MonoBehaviour
 {
     public Rigidbody rb;
+    public Transform direction;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class bullets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = transform.forward * (10f);
+        rb.AddForce(direction.up * 50);
     }
 }
 

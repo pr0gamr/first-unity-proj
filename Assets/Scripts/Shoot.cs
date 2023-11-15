@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
+    public Transform Player;
     public Rigidbody objectToSpawn;
     public Rigidbody objectTwoSpawn;
     public Rigidbody objectThreeSpawn;
     public Rigidbody objectFourSpawn;
     public Transform Objectarrow;
     public Rigidbody objectFiveSpawn;
+    public Rigidbody objectSixSpawn;
+    public Rigidbody objectSevenSpawn;
     public Transform barrelEnd;
     public Transform direction;
     float LoadOut = 1;
     float m_FieldOfView;
-    float Sensitivity;
     bool reloading;
     float ARfireDown;
-
+   
     void start()
     {
         m_FieldOfView = 60.0f;
@@ -25,8 +27,11 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
+        var localOffset = new Vector3(0, 0, 5);
+        var worldOffset = barrelEnd.rotation * localOffset;
+        var spawnPosition = Player.position + worldOffset;
+
         m_FieldOfView = 60.0f;
-        Sensitivity = 2.8f;
         if(ARfireDown > 0)
         {
             ARfireDown -= 1;
@@ -35,9 +40,9 @@ public class Shoot : MonoBehaviour
         {
             if (Input.GetButton("Fire1") && ARfireDown == 0)
             {
-                Rigidbody bullet;
-                bullet = Instantiate(objectToSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
-                bullet.GetComponent<Rigidbody>().AddForce(direction.forward * 7500);
+                Rigidbody bullet1;
+                bullet1 = Instantiate(objectToSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
+                bullet1.GetComponent<Rigidbody>().AddForce(direction.forward * 7500);
                 ARfireDown = 25;
                 //Debug.Log("shoot");
             }
@@ -53,9 +58,9 @@ public class Shoot : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
             {
-                Rigidbody bullet3;
-                bullet3 = Instantiate(objectThreeSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
-                bullet3.GetComponent<Rigidbody>().AddForce(direction.forward * 50000);
+                Rigidbody bullet1;
+                bullet1 = Instantiate(objectThreeSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
+                bullet1.GetComponent<Rigidbody>().AddForce(direction.forward * 50000);
                 //Debug.Log("shoot3");
             }
             if (Input.GetButtonDown("Fire2"))
@@ -70,15 +75,32 @@ public class Shoot : MonoBehaviour
         {
             if(Input.GetButtonDown("Fire1"))
             {
-                Rigidbody bullet3;
-                bullet3 = Instantiate(objectFiveSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
-                bullet3.GetComponent<Rigidbody>().AddForce(direction.forward * 5000000);
+                Rigidbody bullet1;
+                bullet1 = Instantiate(objectFiveSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
+                bullet1.GetComponent<Rigidbody>().AddForce(direction.forward * 5000000);
                 //Debug.Log("sniper");
             }
             
             if (Input.GetButton("Fire2"))
             {
                 m_FieldOfView = 10f;
+            }
+        }
+        else if (LoadOut == 4)
+        {
+            if(Input.GetButtonDown("Fire1"))
+            {
+                Rigidbody bullet1;
+                bullet1 = Instantiate(objectSixSpawn, spawnPosition, spawnPosition.rotation) as Rigidbody;
+                bullet1.GetComponent<Rigidbody>().AddForce(direction.forward * 50);
+                //Debug.Log("sniper");
+            }
+            if(Input.GetButtonDown("Fire2"))
+            {
+                Rigidbody bullet2;
+                bullet2 = Instantiate(objectSevenSpawn, spawnPosition, spawnPosition.rotation) as Rigidbody;
+                bullet2.GetComponent<Rigidbody>().AddForce(direction.forward * 500000);
+                //Debug.Log("sniper");
             }
         }
         if (Input.GetButtonDown("Fire3"))
@@ -93,8 +115,11 @@ public class Shoot : MonoBehaviour
             }
             else if (LoadOut == 3)
             {
+                LoadOut = 4;
+            }
+            else if (LoadOut == 4)
+            {
                 LoadOut = 1;
-                Sensitivity = 1f;
             }
             Debug.Log(LoadOut);
         }
@@ -115,6 +140,10 @@ public class Shoot : MonoBehaviour
         else if(LoadOut == 3)
         {
             GUI.Label(new Rect(10, 25, 500, 20), "Left click : Sniper rifle" + " | Right click : Zoom");
+        }
+        else if(LoadOut == 4)
+        {
+            GUI.Label(new Rect(10, 25, 500, 20), "Left click : rocket" + " | Right click : meator");
         }
     }
 }

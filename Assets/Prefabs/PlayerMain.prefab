@@ -345,6 +345,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4725851241968802295, guid: 02b638b94f0717143abc82a26e0a7ace, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1301851501243044754}
+    - target: {fileID: 4725851241968802295, guid: 02b638b94f0717143abc82a26e0a7ace, type: 3}
       propertyPath: barrelEnd
       value: 
       objectReference: {fileID: 264407418818170615}
@@ -352,6 +356,18 @@ PrefabInstance:
       propertyPath: direction
       value: 
       objectReference: {fileID: 7441412640806396131}
+    - target: {fileID: 4725851241968802295, guid: 02b638b94f0717143abc82a26e0a7ace, type: 3}
+      propertyPath: Objectarrow
+      value: 
+      objectReference: {fileID: 6459028691179877135, guid: 65fd27dcb67297b4fa42ab8b2876628b, type: 3}
+    - target: {fileID: 4725851241968802295, guid: 02b638b94f0717143abc82a26e0a7ace, type: 3}
+      propertyPath: objectSixSpawn
+      value: 
+      objectReference: {fileID: 5137892240474858265, guid: 17d3ea1375f931145bd923469ccdf001, type: 3}
+    - target: {fileID: 4725851241968802295, guid: 02b638b94f0717143abc82a26e0a7ace, type: 3}
+      propertyPath: objectSevenSpawn
+      value: 
+      objectReference: {fileID: 1833552022593002193, guid: 7afa543258d04a24f81cc0db8f4c3ff2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02b638b94f0717143abc82a26e0a7ace, type: 3}
 --- !u!1001 &1301851500836095867
