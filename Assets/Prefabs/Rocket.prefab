@@ -286,7 +286,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3402294567214827501}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.50000024
   m_Height: 2.000001
@@ -306,8 +306,8 @@ GameObject:
   - component: {fileID: 1470198571613584914}
   - component: {fileID: 5137892240474858265}
   - component: {fileID: 3544448249719309744}
-  - component: {fileID: 3252845755342962074}
   - component: {fileID: 8636357786582567604}
+  - component: {fileID: 233663251151999902}
   m_Layer: 0
   m_Name: Rocket
   m_TagString: Untagged
@@ -428,20 +428,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 10
---- !u!114 &3252845755342962074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7072692503092926027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7664a85f4212b044954be6319367185, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 5137892240474858265}
-  direction: {fileID: 1230723145227684995}
 --- !u!114 &8636357786582567604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,6 +441,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowself: {fileID: 0}
+--- !u!114 &233663251151999902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7072692503092926027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7664a85f4212b044954be6319367185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rbs: {fileID: 0}
+  direction: {fileID: 1230723145227684995}
+  self: {fileID: 7072692503092926027}
+  explosionForce: 500
+  explosionRadius: 10
 --- !u!1 &7934110822169619079
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,7 +27,7 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
-        var localOffset = new Vector3(0, 0, 5);
+        var localOffset = new Vector3(0, 0, 2);
         var worldOffset = barrelEnd.rotation * localOffset;
         var spawnPosition = Player.position + worldOffset;
 
@@ -91,14 +91,14 @@ public class Shoot : MonoBehaviour
             if(Input.GetButtonDown("Fire1"))
             {
                 Rigidbody bullet1;
-                bullet1 = Instantiate(objectSixSpawn, spawnPosition, spawnPosition.rotation) as Rigidbody;
+                bullet1 = Instantiate(objectSixSpawn, spawnPosition, barrelEnd.rotation) as Rigidbody;
                 bullet1.GetComponent<Rigidbody>().AddForce(direction.forward * 50);
                 //Debug.Log("sniper");
             }
             if(Input.GetButtonDown("Fire2"))
             {
                 Rigidbody bullet2;
-                bullet2 = Instantiate(objectSevenSpawn, spawnPosition, spawnPosition.rotation) as Rigidbody;
+                bullet2 = Instantiate(objectSevenSpawn, spawnPosition, barrelEnd.rotation) as Rigidbody;
                 bullet2.GetComponent<Rigidbody>().AddForce(direction.forward * 500000);
                 //Debug.Log("sniper");
             }
