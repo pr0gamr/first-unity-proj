@@ -38,5 +38,10 @@ public class scenes : MonoBehaviour
         {
             SceneManager.LoadScene("Terrain");
         }
+
+        else if (Input.GetButtonDown("Scene6"))
+        {
+            SceneManager.LoadScene("maze");
+        }
     }
 }

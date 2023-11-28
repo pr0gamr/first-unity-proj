@@ -456,7 +456,7 @@ MonoBehaviour:
   rbs: {fileID: 0}
   direction: {fileID: 1230723145227684995}
   self: {fileID: 7072692503092926027}
-  explosionForce: 500
+  explosionForce: 250
   explosionRadius: 10
 --- !u!1 &7934110822169619079
 GameObject:
