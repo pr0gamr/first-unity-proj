@@ -48,7 +48,7 @@ public class bullets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rbs.AddForce(direction.up * 25);
+        rbs.AddForce(direction.up * 25);
     }
 
 //Detect collisions between the GameObjects with Colliders attached

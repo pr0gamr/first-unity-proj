@@ -97,7 +97,7 @@ public class Movement : MonoBehaviour
  
         if(isGrounded! && controller.velocity.y < -1f)
         {
-            velocityY = -8f;
+            velocityY = -0f;
         }
     }
 }
