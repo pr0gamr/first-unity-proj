@@ -5484,6 +5484,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerMain (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7441412640806396128, guid: 93ee8f9081ab8fb4ab430ad61e83c4b4, type: 3}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441412640806396128, guid: 93ee8f9081ab8fb4ab430ad61e83c4b4, type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441412640806396128, guid: 93ee8f9081ab8fb4ab430ad61e83c4b4, type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7441412640806396128, guid: 93ee8f9081ab8fb4ab430ad61e83c4b4, type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93ee8f9081ab8fb4ab430ad61e83c4b4, type: 3}
 --- !u!1 &1097532942
