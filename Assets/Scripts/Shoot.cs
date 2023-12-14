@@ -13,12 +13,14 @@ public class Shoot : MonoBehaviour
     public Rigidbody objectFiveSpawn;
     public Rigidbody objectSixSpawn;
     public Rigidbody objectSevenSpawn;
+    public ParticleSystem FlameThrower;
     public Transform barrelEnd;
     public Transform direction;
     float LoadOut = 1;
     float m_FieldOfView;
     bool reloading;
     float ARfireDown;
+    float FlameDown;
    
     void start()
     {
@@ -35,6 +37,10 @@ public class Shoot : MonoBehaviour
         if(ARfireDown > 0)
         {
             ARfireDown -= 1;
+        }
+        if(FlameDown > 0)
+        {
+            FlameDown -= 1;
         }
         if (LoadOut == 1)
         {
@@ -103,6 +109,19 @@ public class Shoot : MonoBehaviour
                 //Debug.Log("sniper");
             }
         }
+        else if (LoadOut == 5)
+        {
+            if(Input.GetButton("Fire1") && FlameDown <= 0)
+            {
+                FlameThrower.Play();
+                Debug.Log("FIRE");
+                FlameDown = 3;
+            }
+            if(Input.GetButtonDown("Fire2"))
+            {
+                
+            }
+        }
         if (Input.GetButtonDown("Fire3"))
         {
             if (LoadOut == 1)
@@ -118,6 +137,10 @@ public class Shoot : MonoBehaviour
                 LoadOut = 4;
             }
             else if (LoadOut == 4)
+            {
+                LoadOut = 5;
+            }
+            else if (LoadOut == 5)
             {
                 LoadOut = 1;
             }
@@ -144,6 +167,10 @@ public class Shoot : MonoBehaviour
         else if(LoadOut == 4)
         {
             GUI.Label(new Rect(10, 25, 500, 20), "Left click : rocket" + " | Right click : meator");
+        }
+        else if(LoadOut == 5)
+        {
+            GUI.Label(new Rect(10, 25, 500, 20), "Left click : Flame Thrower" + " | Right click : N/A");
         }
     }
 }

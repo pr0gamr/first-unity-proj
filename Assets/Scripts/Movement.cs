@@ -14,13 +14,14 @@ public class Movement : MonoBehaviour
     [SerializeField][Range(0.0f, 0.5f)] float moveSmoothTime = 0.3f;
     [SerializeField] float gravity = -30f;
     [SerializeField] Transform groundCheck;
-    [SerializeField] LayerMask ground;  
+    [SerializeField] LayerMask ground; 
  
     public float jumpHeight = 6f;
     float velocityY;
     bool isGrounded;
     bool isSprint;
     bool isCrouch;
+    bool isOnGround;
  
     float cameraCap;
     Vector2 currentMouseDelta;
@@ -95,7 +96,7 @@ public class Movement : MonoBehaviour
             Debug.Log("Jump");
         }
  
-        if(isGrounded! && controller.velocity.y < -1f)
+        if(isGrounded && controller.velocity.y < -1f)
         {
             velocityY = -0f;
         }
