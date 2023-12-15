@@ -14,6 +14,7 @@ public class bullets : MonoBehaviour
     [SerializeField] float explosionForce = 10;
     [SerializeField] float explosionRadius = 10;
     Collider[] colliders = new Collider[2000];
+    public ParticleSystem Explode;
 
     void ExplodeNonAlloc()
     {
@@ -48,12 +49,13 @@ public class bullets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rbs.AddForce(direction.up * 25);
+        //rbs.AddForce(direction.up * 25);
     }
 
 //Detect collisions between the GameObjects with Colliders attached
     void OnCollisionEnter(Collision collision)
     {
+        Explode.Play();
         Destroy(self);
         ExplodeNonAlloc();
         
