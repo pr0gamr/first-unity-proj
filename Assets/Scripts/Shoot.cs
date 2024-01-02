@@ -13,7 +13,7 @@ public class Shoot : MonoBehaviour
     public Rigidbody objectFiveSpawn;
     public Rigidbody objectSixSpawn;
     public Rigidbody objectSevenSpawn;
-    public ParticleSystem FlameThrower;
+    [SerializeField] ParticleSystem FlameThrower;
     public Transform barrelEnd;
     public Transform direction;
     float LoadOut = 1;
@@ -117,6 +117,10 @@ public class Shoot : MonoBehaviour
                 Debug.Log("FIRE");
                 FlameDown = 3;
             }
+            //if(Input.GetButtonUp("Fire1"))
+            //{
+            //    FlameThrower.Stop();
+            //}
             if(Input.GetButtonDown("Fire2"))
             {
                 
