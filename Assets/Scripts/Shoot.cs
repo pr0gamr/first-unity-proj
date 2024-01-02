@@ -14,6 +14,7 @@ public class Shoot : MonoBehaviour
     public Rigidbody objectSixSpawn;
     public Rigidbody objectSevenSpawn;
     [SerializeField] ParticleSystem FlameThrower;
+    [SerializeField] ParticleSystem ColdThrower;
     public Transform barrelEnd;
     public Transform direction;
     float LoadOut = 1;
@@ -21,6 +22,7 @@ public class Shoot : MonoBehaviour
     bool reloading;
     float ARfireDown;
     float FlameDown;
+    float ColdDown;
    
     void start()
     {
@@ -41,6 +43,10 @@ public class Shoot : MonoBehaviour
         if(FlameDown > 0)
         {
             FlameDown -= 1;
+        }
+        if(ColdDown > 0)
+        {
+            ColdDown -= 1;
         }
         if (LoadOut == 1)
         {
@@ -121,9 +127,11 @@ public class Shoot : MonoBehaviour
             //{
             //    FlameThrower.Stop();
             //}
-            if(Input.GetButtonDown("Fire2"))
+            if(Input.GetButton("Fire2"))
             {
-                
+                ColdThrower.Play();
+                Debug.Log("COLD");
+                ColdDown = 3;
             }
         }
         if (Input.GetButtonDown("Fire3"))
@@ -174,7 +182,7 @@ public class Shoot : MonoBehaviour
         }
         else if(LoadOut == 5)
         {
-            GUI.Label(new Rect(10, 25, 500, 20), "Left click : Flame Thrower" + " | Right click : N/A");
+            GUI.Label(new Rect(10, 25, 500, 20), "Left click : Flame Thrower" + " | Right click : Cold Thrower");
         }
     }
 }
