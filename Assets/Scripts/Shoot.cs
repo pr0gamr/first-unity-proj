@@ -40,14 +40,7 @@ public class Shoot : MonoBehaviour
         {
             ARfireDown -= 1;
         }
-        if(FlameDown > 0)
-        {
-            FlameDown -= 1;
-        }
-        if(ColdDown > 0)
-        {
-            ColdDown -= 1;
-        }
+
         if (LoadOut == 1)
         {
             if (Input.GetButton("Fire1") && ARfireDown == 0)
@@ -117,21 +110,32 @@ public class Shoot : MonoBehaviour
         }
         else if (LoadOut == 5)
         {
-            if(Input.GetButton("Fire1") && FlameDown <= 0)
+            if(Input.GetButton("Fire1"))
             {
-                FlameThrower.Play();
-                Debug.Log("FIRE");
-                FlameDown = 3;
+                Debug.Log("meep");
+                Instantiate(FlameThrower, barrelEnd.position, barrelEnd.rotation);
+                //Debug.Log(FlameThrower.isPlaying);
+                //if(FlameThrower.isPlaying)
+                //{
+                //    FlameThrower.Stop();
+                    //Debug.Log("FIRE");
+                //}
+                //Debug.Log(FlameThrower.isPlaying);
+                //if(!FlameThrower.isPlaying)
+                //{
+                //        FlameThrower.Play();
+                //}
             }
             //if(Input.GetButtonUp("Fire1"))
             //{
             //    FlameThrower.Stop();
             //}
-            if(Input.GetButton("Fire2"))
+            if(Input.GetButtonDown("Fire2"))
             {
+            
                 ColdThrower.Play();
-                Debug.Log("COLD");
-                ColdDown = 3;
+                 Debug.Log("COLD");
+            
             }
         }
         if (Input.GetButtonDown("Fire3"))

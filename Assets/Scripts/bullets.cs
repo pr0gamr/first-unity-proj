@@ -18,6 +18,7 @@ public class bullets : MonoBehaviour
 
     void ExplodeNonAlloc()
     {
+                Destroy(self);
         //Debug.Log("Do something here");
         int numColliders = Physics.OverlapSphereNonAlloc(transform.position, explosionRadius, colliders);
         if (numColliders > 0)
@@ -49,14 +50,14 @@ public class bullets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //rbs.AddForce(direction.up * 25);
+        rbs.AddForce(direction.up * 25);
     }
 
 //Detect collisions between the GameObjects with Colliders attached
     void OnCollisionEnter(Collision collision)
     {
-        Explode.Play();
-        Destroy(self);
+        Instantiate(Explode, direction.position, direction.rotation);
+
         ExplodeNonAlloc();
         
 
