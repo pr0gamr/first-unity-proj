@@ -18,7 +18,7 @@ public class bullets : MonoBehaviour
 
     void ExplodeNonAlloc()
     {
-                Destroy(self);
+                //Destroy(self);
         //Debug.Log("Do something here");
         int numColliders = Physics.OverlapSphereNonAlloc(transform.position, explosionRadius, colliders);
         if (numColliders > 0)
