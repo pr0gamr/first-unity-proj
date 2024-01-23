@@ -13,6 +13,6 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         Enemy.SetDestination(Player.position);
-        Debug.Log(Player.position);
+        //Debug.Log(Player.position);
     }
 }
