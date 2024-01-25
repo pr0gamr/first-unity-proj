@@ -15,6 +15,8 @@ public class Movement : MonoBehaviour
     [SerializeField] float gravity = -30f;
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask ground; 
+    AudioSource audioSource;
+    public AudioClip RunningSound;
  
     public float jumpHeight = 6f;
     float velocityY;
@@ -35,7 +37,8 @@ public class Movement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
- 
+        audioSource = GetComponent<AudioSource>();
+
         if (cursorLock)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -89,7 +92,24 @@ public class Movement : MonoBehaviour
         Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * Speed + Vector3.up * velocityY;
  
         controller.Move(velocity * Time.deltaTime);
- 
+
+        if(Input.GetAxisRaw("Horizontal") != 0 && isGrounded == true || Input.GetAxisRaw("Vertical") != 0 && isGrounded == true )
+        {
+            if(audioSource != null && !audioSource.isPlaying)
+            {
+                    audioSource.clip = RunningSound;
+                    audioSource.Play();
+            }
+        }
+        else
+        {
+            if(audioSource != null && audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+        }
+
+
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             velocityY = Mathf.Sqrt(jumpHeight * -2f * gravity);
