@@ -23,6 +23,8 @@ public class Shoot : MonoBehaviour
     float ARfireDown;
     float FlameDown;
     float ColdDown;
+    public AudioSource source;
+    public AudioClip shot;
    
     void start()
     {
@@ -49,6 +51,15 @@ public class Shoot : MonoBehaviour
                 bullet1 = Instantiate(objectToSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
                 bullet1.GetComponent<Rigidbody>().AddForce(direction.forward * 7500);
                 ARfireDown = 25;
+                if(source != null && !source.isPlaying)
+                {
+                    source.clip = shot;
+                    source.Play();
+                }
+                else if(source != null && source.isPlaying)
+                {
+                    source.Stop();
+                }
                 //Debug.Log("shoot");
             }
             if (Input.GetButtonDown("Fire2"))

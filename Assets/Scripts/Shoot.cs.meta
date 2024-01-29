@@ -4,10 +4,21 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - Player: {instanceID: 0}
   - objectToSpawn: {fileID: 5599068625681664558, guid: c26550edb1062554b92e75e3019b18f0, type: 3}
   - objectTwoSpawn: {fileID: 7443674311801684144, guid: ceea95d02600f804b8d7549c1a28a7b5, type: 3}
+  - objectThreeSpawn: {instanceID: 0}
+  - objectFourSpawn: {instanceID: 0}
+  - Objectarrow: {instanceID: 0}
+  - objectFiveSpawn: {instanceID: 0}
+  - objectSixSpawn: {instanceID: 0}
+  - objectSevenSpawn: {instanceID: 0}
+  - FlameThrower: {instanceID: 0}
+  - ColdThrower: {instanceID: 0}
   - barrelEnd: {instanceID: 0}
   - direction: {instanceID: 0}
+  - source: {instanceID: 0}
+  - shot: {fileID: 8300000, guid: 598155daf75e90841ba8ac09e5b95a3f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
