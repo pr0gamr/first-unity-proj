@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000016, guid: ab7015099dd431b449071b87689e055b, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 775ce9ed52cb5af42a15fe1cc3bf6fd7, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: a86cf1d06b4d72d48a985d09ed6027bb, type: 2}
 --- !u!1 &489614872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,6 +1025,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 8
+  RunningSound: {fileID: 0}
   jumpHeight: 6
 --- !u!143 &1301851500388542466
 CharacterController:
@@ -1379,6 +1380,8 @@ MonoBehaviour:
   ColdThrower: {fileID: 0}
   barrelEnd: {fileID: 8742616761669759170}
   direction: {fileID: 2142143202152210134}
+  source: {fileID: 0}
+  shot: {fileID: 0}
 --- !u!65 &2989225884305565394
 BoxCollider:
   m_ObjectHideFlags: 0

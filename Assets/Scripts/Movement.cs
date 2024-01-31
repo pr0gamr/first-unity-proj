@@ -97,8 +97,8 @@ public class Movement : MonoBehaviour
         {
             if(audioSource != null && !audioSource.isPlaying)
             {
-                    audioSource.clip = RunningSound;
-                    audioSource.Play();
+                audioSource.clip = RunningSound;
+                audioSource.Play();
             }
         }
         else
