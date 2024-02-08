@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class Enemyhealth : MonoBehaviour
 {
-    public float Health = 10.0f;
+    public GameObject self;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void OnCollisionEnter(Collision otherObj) 
     {
+        if(otherObj.gameObject.tag != "Player")
+        {
+        Destroy(self);
+        }
+        
         if (otherObj.gameObject.tag == "Enemy") 
         {
-            otherObj.Health -= 1;
+            GameObject Enemy = otherObj.gameObject;
+            Enemy.GetComponent<EnemyKillCheck>().Health -= 1;
         }
     }
 }

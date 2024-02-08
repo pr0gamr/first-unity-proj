@@ -18,18 +18,13 @@ public class Shoot : MonoBehaviour
     public Transform barrelEnd;
     public Transform direction;
     float LoadOut = 1;
-    float m_FieldOfView;
+    float m_FieldOfView = 60.0f;
     bool reloading;
     float ARfireDown;
     float FlameDown;
     float ColdDown;
     public AudioSource source;
     public AudioClip shot;
-   
-    void start()
-    {
-        m_FieldOfView = 60.0f;
-    }
 
     void Update()
     {
@@ -62,7 +57,7 @@ public class Shoot : MonoBehaviour
                 }
                 //Debug.Log("shoot");
             }
-            if (Input.GetButtonDown("Fire2"))
+            else if (Input.GetButtonDown("Fire2"))
             {
                 Rigidbody bullet2;
                 bullet2 = Instantiate(objectTwoSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
@@ -173,6 +168,7 @@ public class Shoot : MonoBehaviour
             }
             Debug.Log(LoadOut);
         }
+
         Camera.main.fieldOfView = m_FieldOfView;
     }
 
