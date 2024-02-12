@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
     bool isSprint;
     bool isCrouch;
     bool isOnGround;
-    bool overHead;
+    public bool overHead;
  
     float cameraCap;
     Vector2 currentMouseDelta;

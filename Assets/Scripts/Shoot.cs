@@ -28,6 +28,7 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
+        
         var localOffset = new Vector3(0, 0, 2);
         var worldOffset = barrelEnd.rotation * localOffset;
         var spawnPosition = Player.position + worldOffset;
@@ -168,8 +169,11 @@ public class Shoot : MonoBehaviour
             }
             Debug.Log(LoadOut);
         }
-
-        Camera.main.fieldOfView = m_FieldOfView;
+    
+        if(GetComponent<Movement>().overHead == false)
+        {
+            Camera.main.fieldOfView = m_FieldOfView;
+        }
     }
 
     void OnGUI() 
