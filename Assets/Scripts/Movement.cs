@@ -24,6 +24,7 @@ public class Movement : MonoBehaviour
     bool isSprint;
     bool isCrouch;
     bool isOnGround;
+    bool overHead;
  
     float cameraCap;
     Vector2 currentMouseDelta;
@@ -33,9 +34,13 @@ public class Movement : MonoBehaviour
     Vector2 currentDir;
     Vector2 currentDirVelocity;
     Vector3 velocity;
+
+    public Camera firstPersonCamera;
+    public Camera overheadCamera;
  
     void Start()
     {
+        ShowFirstPersonView();
         controller = GetComponent<CharacterController>();
         audioSource = GetComponent<AudioSource>();
 
@@ -48,18 +53,33 @@ public class Movement : MonoBehaviour
  
     void Update()
     {
-        UpdateMouse();
         UpdateMove();
-
-        Speed = 6.0f;
-
-        if (Input.GetButton("Crouch"))
+        if(Input.GetButtonDown("View") && overHead == false)
         {
-            Speed = 3.0f;
+            overHead = true;
+            ShowOverheadView();
         }
-        else if (Input.GetButton("Sprint"))
+        else if(Input.GetButtonDown("View") && overHead == true)
         {
-            Speed = 9.0f;
+            overHead = false;
+            ShowFirstPersonView();
+        }
+
+        if(overHead != true)
+        {
+            UpdateMouse();
+            
+
+            Speed = 6.0f;
+
+            if (Input.GetButton("Crouch"))
+            {
+                Speed = 3.0f;
+            }
+            else if (Input.GetButton("Sprint"))
+            {
+                Speed = 9.0f;
+            }
         }
     }
  
@@ -120,5 +140,15 @@ public class Movement : MonoBehaviour
         {
             velocityY = -0f;
         }
+    }
+
+    void ShowOverheadView() {
+        firstPersonCamera.enabled = false;
+        overheadCamera.enabled = true;
+    }
+
+    void ShowFirstPersonView() {
+        firstPersonCamera.enabled = true;
+        overheadCamera.enabled = false;
     }
 }

@@ -7,6 +7,8 @@ MonoImporter:
   - playerCamera: {instanceID: 0}
   - groundCheck: {instanceID: 0}
   - RunningSound: {fileID: 8300000, guid: d76a55791c08b439a9c2e5e26544c8ad, type: 3}
+  - firstPersonCamera: {fileID: 8454433339799562139, guid: 2b0b75ca573d1354ca0577f9c2e9374c, type: 3}
+  - overheadCamera: {fileID: 6564658593411566748, guid: 2cc1cb3e265b6b14ba96cd7cdb5430c3, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
