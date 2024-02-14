@@ -266,6 +266,9 @@ MonoBehaviour:
     m_Bits: 8
   RunningSound: {fileID: 8300000, guid: d76a55791c08b439a9c2e5e26544c8ad, type: 3}
   jumpHeight: 6
+  overHead: 0
+  firstPersonCamera: {fileID: 7441412640806396128}
+  overheadCamera: {fileID: 6564658593411566748, guid: 2cc1cb3e265b6b14ba96cd7cdb5430c3, type: 3}
 --- !u!114 &-3952862824037233631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10297,6 +10300,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1861087919}
     - target: {fileID: 4725851241968802295, guid: 02b638b94f0717143abc82a26e0a7ace, type: 3}
+      propertyPath: PlayerVar
+      value: 
+      objectReference: {fileID: 1301851501243044758}
+    - target: {fileID: 4725851241968802295, guid: 02b638b94f0717143abc82a26e0a7ace, type: 3}
       propertyPath: barrelEnd
       value: 
       objectReference: {fileID: 264407418818170615}
@@ -10387,6 +10394,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b0b75ca573d1354ca0577f9c2e9374c, type: 3}
+--- !u!20 &7441412640806396128 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8454433339799562139, guid: 2b0b75ca573d1354ca0577f9c2e9374c, type: 3}
+  m_PrefabInstance: {fileID: 1301851500836095867}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7441412640806396131 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8454433339799562136, guid: 2b0b75ca573d1354ca0577f9c2e9374c, type: 3}

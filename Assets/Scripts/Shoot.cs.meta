@@ -4,6 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - PlayerVar: {fileID: 1301851501243044758, guid: 93ee8f9081ab8fb4ab430ad61e83c4b4, type: 3}
   - Player: {instanceID: 0}
   - objectToSpawn: {fileID: 5599068625681664558, guid: c26550edb1062554b92e75e3019b18f0, type: 3}
   - objectTwoSpawn: {fileID: 7443674311801684144, guid: ceea95d02600f804b8d7549c1a28a7b5, type: 3}

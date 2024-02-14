@@ -405,6 +405,7 @@ GameObject:
   - component: {fileID: 1460586448}
   - component: {fileID: 6670259498396506287}
   - component: {fileID: 2758536884212586578}
+  - component: {fileID: 3382417401620923444}
   - component: {fileID: 1460586455}
   m_Layer: 0
   m_Name: Enemy
@@ -501,7 +502,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 3
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -553,6 +554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: {fileID: -8995520188686283330}
   Player: {fileID: 0}
+  Target: {fileID: 0}
 --- !u!114 &2758536884212586578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,6 +568,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 10
+  self: {fileID: 2621491724789195272}
+--- !u!114 &3382417401620923444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2621491724789195272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f47d2cb9a1f369f48b58bef5c919a521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   self: {fileID: 2621491724789195272}
 --- !u!82 &1460586455
 AudioSource:

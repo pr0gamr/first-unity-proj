@@ -981,6 +981,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1301851500388542467}
     - target: {fileID: 4725851241968802295, guid: 02b638b94f0717143abc82a26e0a7ace, type: 3}
+      propertyPath: PlayerVar
+      value: 
+      objectReference: {fileID: 1301851500388542471}
+    - target: {fileID: 4725851241968802295, guid: 02b638b94f0717143abc82a26e0a7ace, type: 3}
       propertyPath: barrelEnd
       value: 
       objectReference: {fileID: 2027863106}
@@ -1027,6 +1031,7 @@ MonoBehaviour:
     m_Bits: 8
   RunningSound: {fileID: 0}
   jumpHeight: 6
+  overHead: 0
   firstPersonCamera: {fileID: 8454433339799562139, guid: 2b0b75ca573d1354ca0577f9c2e9374c, type: 3}
   overheadCamera: {fileID: 6564658593411566748, guid: 2cc1cb3e265b6b14ba96cd7cdb5430c3, type: 3}
 --- !u!143 &1301851500388542466
@@ -1369,6 +1374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d156efc078e5014794a127e5332194e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerVar: {fileID: 7561057449536892323}
   Player: {fileID: 7561057449536892327}
   objectToSpawn: {fileID: 5599068625681664558, guid: c26550edb1062554b92e75e3019b18f0, type: 3}
   objectTwoSpawn: {fileID: 7443674311801684144, guid: ceea95d02600f804b8d7549c1a28a7b5, type: 3}

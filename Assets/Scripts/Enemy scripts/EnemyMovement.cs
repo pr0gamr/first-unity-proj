@@ -8,11 +8,17 @@ public class EnemyMovement : MonoBehaviour
 
     public NavMeshAgent Enemy;
     public Transform Player;
+    public Transform Target;
 
+    void Start()
+    {
+        Enemy.SetDestination(Target.position);
+        Debug.Log(Target.position);
+    }
     // Update is called once per frame
     void Update()
     {
-        Enemy.SetDestination(Player.position);
+        //Enemy.SetDestination(Player.position);
         //Debug.Log(Player.position);
     }
 } 
