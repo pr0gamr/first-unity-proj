@@ -14,6 +14,11 @@ public class scenes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonDown("R"))
+        {
+            var Reload = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(Reload);
+        }
         if (Input.GetButtonDown("Scene1"))
         {
             SceneManager.LoadScene("Test");
