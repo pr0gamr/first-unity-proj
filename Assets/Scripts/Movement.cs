@@ -102,18 +102,28 @@ public class Movement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, ground);
  
-        Vector2 targetDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        targetDir.Normalize();
+        if (overHead == false)
+        {
+            Vector2 targetDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            targetDir.Normalize();
+            currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);
  
-        currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);
+        }
+        else 
+        {
+            Vector2 targetDir = new Vector2(0,0);
+            targetDir.Normalize();
+            currentDir = Vector2.SmoothDamp(currentDir, targetDir, ref currentDirVelocity, moveSmoothTime);
  
+        }
+
         velocityY += gravity * 2f * Time.deltaTime;
  
         Vector3 velocity = (transform.forward * currentDir.y + transform.right * currentDir.x) * Speed + Vector3.up * velocityY;
  
         controller.Move(velocity * Time.deltaTime);
 
-        if(Input.GetAxisRaw("Horizontal") != 0 && isGrounded == true || Input.GetAxisRaw("Vertical") != 0 && isGrounded == true )
+        if(Input.GetAxisRaw("Horizontal") != 0 && isGrounded == true && overHead == false || Input.GetAxisRaw("Vertical") != 0 && isGrounded == true && overHead == false)
         {
             if(audioSource != null && !audioSource.isPlaying)
             {
@@ -130,7 +140,7 @@ public class Movement : MonoBehaviour
         }
 
 
-        if (isGrounded && Input.GetButtonDown("Jump"))
+        if (isGrounded && Input.GetButtonDown("Jump") && overHead == false)
         {
             velocityY = Mathf.Sqrt(jumpHeight * -2f * gravity);
             Debug.Log("Jump");
