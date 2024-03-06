@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 1301851501243044759}
   - component: {fileID: 1301851501243044755}
   - component: {fileID: 1301851501243044752}
+  - component: {fileID: 2169504407177893221}
   - component: {fileID: -3952862824037233631}
   - component: {fileID: -4675052200415314323}
   - component: {fileID: 1861087911}
@@ -269,6 +270,19 @@ MonoBehaviour:
   overHead: 0
   firstPersonCamera: {fileID: 7441412640806396128}
   overheadCamera: {fileID: 6564658593411566748, guid: 2cc1cb3e265b6b14ba96cd7cdb5430c3, type: 3}
+--- !u!114 &2169504407177893221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301851501243044758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0ceeccc03e83b458b9a0b75bd4b046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turret: {fileID: 3764248861663111477, guid: b5834e398c44df8429b9ffc0aff46230, type: 3}
 --- !u!114 &-3952862824037233631
 MonoBehaviour:
   m_ObjectHideFlags: 0

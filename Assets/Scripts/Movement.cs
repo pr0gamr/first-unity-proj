@@ -58,11 +58,15 @@ public class Movement : MonoBehaviour
         {
             overHead = true;
             ShowOverheadView();
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         else if(Input.GetButtonDown("View") && overHead == true)
         {
             overHead = false;
             ShowFirstPersonView();
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         if(overHead != true)

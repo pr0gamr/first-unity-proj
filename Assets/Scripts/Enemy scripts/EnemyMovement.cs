@@ -16,9 +16,9 @@ public class EnemyMovement : MonoBehaviour
         Debug.Log(Target.position);
     }
     // Update is called once per frame
-    void Update()
-    {
+    //void Update()
+    //{
         //Enemy.SetDestination(Player.position);
         //Debug.Log(Player.position);
-    }
+    //}
 } 
