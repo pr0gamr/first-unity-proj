@@ -15,8 +15,7 @@ public class PlaceTurret : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                //Transform place = hit.point;
-                Instantiate(turret, hit.position);
+                Instantiate(turret, hit.point, Quaternion.Euler(0, 0, 0));
                 Debug.Log(hit.point);
                 Debug.Log("turmnet");
             }

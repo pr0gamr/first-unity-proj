@@ -360,6 +360,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7889751579124090111, guid: 0fb5659f78b22c74d8625e7272105466, type: 3}
   m_PrefabInstance: {fileID: 658226978}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &961953667 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7441412640806396128, guid: 93ee8f9081ab8fb4ab430ad61e83c4b4, type: 3}
+  m_PrefabInstance: {fileID: 1235902859}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1016567847
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,6 +539,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1301851501243044752, guid: 93ee8f9081ab8fb4ab430ad61e83c4b4, type: 3}
+      propertyPath: turret
+      value: 
+      objectReference: {fileID: 3764248861663111477, guid: b5834e398c44df8429b9ffc0aff46230, type: 3}
+    - target: {fileID: 1301851501243044752, guid: 93ee8f9081ab8fb4ab430ad61e83c4b4, type: 3}
       propertyPath: overheadCamera
       value: 
       objectReference: {fileID: 353742922}
@@ -585,6 +594,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerMain (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2169504407177893221, guid: 93ee8f9081ab8fb4ab430ad61e83c4b4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6018079729578318052, guid: 93ee8f9081ab8fb4ab430ad61e83c4b4, type: 3}
+      propertyPath: fpsCamera
+      value: 
+      objectReference: {fileID: 961953667}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93ee8f9081ab8fb4ab430ad61e83c4b4, type: 3}
 --- !u!1 &1789236335

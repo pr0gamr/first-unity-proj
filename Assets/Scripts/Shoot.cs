@@ -26,6 +26,7 @@ public class Shoot : MonoBehaviour
     float ColdDown;
     public AudioSource source;
     public AudioClip shot;
+    public Camera fpsCamera;
 
     void Update()
     {
@@ -45,10 +46,20 @@ public class Shoot : MonoBehaviour
             {
                 if (Input.GetButton("Fire1") && ARfireDown == 0)
                 {
-                    Rigidbody bullet1;
-                    bullet1 = Instantiate(objectToSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
-                    bullet1.GetComponent<Rigidbody>().AddForce(direction.forward * 7500);
-                    ARfireDown = 25;
+                   RaycastHit hit; 
+                   if(Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit))
+                   {
+                        if(hit.collider.tag == "Enemy")
+                        {
+                            GameObject Enemy = hit.collider.gameObject;
+                            Enemy.GetComponent<EnemyKillCheck>().Health -= 1;
+                        }
+                   }
+
+                    //Rigidbody bullet1;
+                    //bullet1 = Instantiate(objectToSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
+                    //bullet1.GetComponent<Rigidbody>().AddForce(direction.forward * 7500);
+                    ARfireDown = 10;
                     if(source != null && !source.isPlaying)
                     {
                         source.clip = shot;

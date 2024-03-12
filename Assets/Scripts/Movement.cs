@@ -37,6 +37,7 @@ public class Movement : MonoBehaviour
 
     public Camera firstPersonCamera;
     public Camera overheadCamera;
+    public GameObject turret;
  
     void Start()
     {
@@ -83,6 +84,21 @@ public class Movement : MonoBehaviour
             else if (Input.GetButton("Sprint"))
             {
                 Speed = 9.0f;
+            }
+        }
+        else if(overHead == true)
+        {
+            if (GetComponent<Movement>().overHead && Input.GetMouseButtonDown(0))
+            {
+                Ray ray = GetComponent<Movement>().overheadCamera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    Instantiate(turret, hit.point, Quaternion.Euler(0, 0, 0));
+                    Debug.Log(hit.point);
+                    Debug.Log("turmnet");
+                }
             }
         }
     }
