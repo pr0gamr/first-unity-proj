@@ -95,9 +95,13 @@ public class Movement : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit))
                 {
-                    Instantiate(turret, hit.point, Quaternion.Euler(0, 0, 0));
-                    Debug.Log(hit.point);
-                    Debug.Log("turmnet");
+                    if(hit.collider.tag == "turretplace")
+                    {
+                        Instantiate(turret, hit.point, Quaternion.Euler(0, 0, 0));
+                        Debug.Log(hit.point);
+                        Debug.Log("turmnet");
+                        Debug.Log(hit.collider.tag);
+                    }
                 }
             }
         }

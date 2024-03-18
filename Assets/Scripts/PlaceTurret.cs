@@ -10,14 +10,26 @@ public class PlaceTurret : MonoBehaviour
     {
         if (GetComponent<Movement>().overHead && Input.GetMouseButtonDown(0))
         {
-            Ray ray = GetComponent<Movement>().overheadCamera.ScreenPointToRay(Input.mousePosition);
+            //Ray ray = GetComponent<Movement>().overheadCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(GetComponent<Movement>().overheadCamera.ScreenPointToRay(Input.mousePosition), out hit))
             {
-                Instantiate(turret, hit.point, Quaternion.Euler(0, 0, 0));
-                Debug.Log(hit.point);
-                Debug.Log("turmnet");
+                if(hit.collider.tag != "turret")
+                {
+                    Instantiate(turret, hit.point, Quaternion.Euler(0, 0, 0));
+                    Debug.Log(hit.point);
+                    Debug.Log("turmnet");
+                    Debug.Log(hit.collider.tag);
+                }
+                else
+                {
+                    Debug.Log("Can Not place the turret here");
+                }
+            }
+            else
+            {
+                Debug.Log("nop no turret");
             }
         }
     }

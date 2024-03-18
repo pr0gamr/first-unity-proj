@@ -7,6 +7,8 @@ public class Shoot : MonoBehaviour
     public GameObject PlayerVar;
     public Transform Player;
     public Rigidbody objectToSpawn;
+    [SerializeField] Transform gunEnd;
+    public LineRenderer lineRend;
     public Rigidbody objectTwoSpawn;
     public Rigidbody objectThreeSpawn;
     public Rigidbody objectFourSpawn;
@@ -27,6 +29,13 @@ public class Shoot : MonoBehaviour
     public AudioSource source;
     public AudioClip shot;
     public Camera fpsCamera;
+
+    void Start()
+    {
+        lineRend.SetPosition(0, gunEnd.position);
+        lineRend.SetPosition(1, gunEnd.position);
+        lineRend.enabled = false;
+    }
 
     void Update()
     {
@@ -49,12 +58,20 @@ public class Shoot : MonoBehaviour
                    RaycastHit hit; 
                    if(Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit))
                    {
+                        Debug.Log(hit.collider.tag);
                         if(hit.collider.tag == "Enemy")
                         {
+                            Debug.Log(hit.collider.tag);
                             GameObject Enemy = hit.collider.gameObject;
                             Enemy.GetComponent<EnemyKillCheck>().Health -= 1;
                         }
                    }
+                   lineRend.enabled = true;
+                   lineRend.SetPosition(0, gunEnd.position);
+                   lineRend.SetPosition(1, hit.point);
+                   StartCoroutine(Despawn());
+                   //Vector3 forward = transform.TransformDirection(Vector3.forward) * hit.distance;
+                   //Debug.DrawRay(fpsCamera.transform.position, forward, Color.yellow);
 
                     //Rigidbody bullet1;
                     //bullet1 = Instantiate(objectToSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
@@ -69,6 +86,7 @@ public class Shoot : MonoBehaviour
                     {
                         source.Stop();
                     }
+                    //lineRend.enabled = false;
                     //Debug.Log("shoot");
                 }
                 else if (Input.GetButtonDown("Fire2"))
@@ -210,5 +228,11 @@ public class Shoot : MonoBehaviour
         {
             GUI.Label(new Rect(10, 25, 500, 20), "Left click : Flame Thrower" + " | Right click : Cold Thrower");
         }
+    }
+
+    IEnumerator Despawn()
+    {
+        yield return new WaitForSeconds(0.01f);
+        lineRend.enabled = false;
     }
 }
