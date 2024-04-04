@@ -98,9 +98,9 @@ public class Movement : MonoBehaviour
                     if(hit.collider.tag == "turretplace")
                     {
                         Instantiate(turret, hit.point, Quaternion.Euler(0, 0, 0));
-                        Debug.Log(hit.point);
+                        //Debug.Log(hit.point);
                         Debug.Log("turmnet");
-                        Debug.Log(hit.collider.tag);
+                       // Debug.Log(hit.collider.tag);
                     }
                 }
             }

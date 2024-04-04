@@ -61,7 +61,7 @@ public class Shoot : MonoBehaviour
                         Debug.Log(hit.collider.tag);
                         if(hit.collider.tag == "Enemy")
                         {
-                            Debug.Log(hit.collider.tag);
+                            //Debug.Log(hit.collider.tag);
                             GameObject Enemy = hit.collider.gameObject;
                             Enemy.GetComponent<EnemyKillCheck>().Health -= 1;
                         }
