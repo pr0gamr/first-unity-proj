@@ -39,25 +39,24 @@ public class faceenemy : MonoBehaviour
                             bestTarget = Enemyobj.transform;
                         }
                     }
-
-
+                    
                     if(Range == 1000)
                     {
-                    //Debug.Log(colliders[i].GetComponent<Collider>().tag);
-                    GameObject Enemy = colliders[i].GetComponent<Collider>().gameObject;
-                    Enemy.GetComponent<EnemyKillCheck>().Health -= 1;
+                        //Debug.Log(colliders[i].GetComponent<Collider>().tag);
+                        GameObject Enemy = colliders[i].GetComponent<Collider>().gameObject;
+                        Enemy.GetComponent<EnemyKillCheck>().Health -= 1;
                     }
                 }
             }  
         }
     
         if(bestTarget != null)
-            {
-                self.LookAt(bestTarget.position, Vector3.up);
-                //Debug.Log(bestTarget.gameObject);
-                bestTarget = null;
-                closestDistance = Range + 1;
-                //Debug.Log(bestTarget);
-            }
+        {
+            self.LookAt(bestTarget.position, Vector3.up);
+            //Debug.Log(bestTarget.gameObject);
+            bestTarget = null;
+            closestDistance = Range + 1;
+            //Debug.Log(bestTarget);
+        }
     }
 }

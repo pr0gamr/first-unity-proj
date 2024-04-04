@@ -232,7 +232,7 @@ public class Shoot : MonoBehaviour
 
     IEnumerator Despawn()
     {
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.02f);
         lineRend.enabled = false;
     }
 }
