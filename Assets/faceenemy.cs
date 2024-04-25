@@ -7,14 +7,22 @@ public class faceenemy : MonoBehaviour
     public Transform self;
     Collider[] colliders = new Collider[2000];
     float Range = 100;
+    float fireRate = 2;
+    float coolDown;
     Transform bestTarget = null;
     float closestDistance;
     float dSqrToTarget;
+    public Transform barrelEnd1;
+    public Transform barrelEnd2;
+    public LineRenderer lineRend;
+    public LineRenderer lineRend2;
     // Start is called before the first frame update
     void Start()
     {
         closestDistance = Range + 1;
-        ///self = GetComponent<Transform>();
+        //makes it easier to set how fast it fires
+        fireRate = (60 / fireRate);
+        coolDown = fireRate;
     }
 
     // Update is called once per frame
@@ -49,14 +57,48 @@ public class faceenemy : MonoBehaviour
                 }
             }  
         }
-    
+
+        if(coolDown > 0)
+        {
+            coolDown -= 1;
+        }
         if(bestTarget != null)
         {
             self.LookAt(bestTarget.position, Vector3.up);
-            //Debug.Log(bestTarget.gameObject);
+            if(coolDown == 0)
+            {
+                RaycastHit hit; 
+                if(Physics.Raycast(self.position, self.forward, out hit))
+                {
+                    Debug.Log(hit.collider.tag);
+                    if(hit.collider.tag == "Enemy")
+                    {
+                        //Debug.Log(hit.collider.tag);
+                        GameObject Enemy = hit.collider.gameObject;
+                        Enemy.GetComponent<EnemyKillCheck>().Health -= 1;
+                    }
+                }
+
+                lineRend.enabled = true;
+                lineRend.SetPosition(0, barrelEnd1.position);
+                lineRend.SetPosition(1, hit.point);
+
+                lineRend2.enabled = true;
+                lineRend2.SetPosition(0, barrelEnd2.position);
+                lineRend2.SetPosition(1, hit.point);
+
+                StartCoroutine(Despawn());
+                coolDown = fireRate;
+            }
             bestTarget = null;
             closestDistance = Range + 1;
-            //Debug.Log(bestTarget);
         }
+    }
+
+    IEnumerator Despawn()
+    {
+        yield return new WaitForSeconds(0.02f);
+        lineRend.enabled = false;
+        lineRend2.enabled = false;
     }
 }
