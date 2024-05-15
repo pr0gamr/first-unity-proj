@@ -70,12 +70,6 @@ public class Shoot : MonoBehaviour
                    lineRend.SetPosition(0, gunEnd.position);
                    lineRend.SetPosition(1, hit.point);
                    StartCoroutine(Despawn());
-                   //Vector3 forward = transform.TransformDirection(Vector3.forward) * hit.distance;
-                   //Debug.DrawRay(fpsCamera.transform.position, forward, Color.yellow);
-
-                    //Rigidbody bullet1;
-                    //bullet1 = Instantiate(objectToSpawn, barrelEnd.position, barrelEnd.rotation) as Rigidbody;
-                    //bullet1.GetComponent<Rigidbody>().AddForce(direction.forward * 7500);
                     ARfireDown = 10;
                     if(source != null && !source.isPlaying)
                     {
@@ -86,8 +80,6 @@ public class Shoot : MonoBehaviour
                     {
                         source.Stop();
                     }
-                    //lineRend.enabled = false;
-                    //Debug.Log("shoot");
                 }
                 else if (Input.GetButtonDown("Fire2"))
                 {
