@@ -7,11 +7,15 @@ public class EnemyMovement : MonoBehaviour
 {
 
     public NavMeshAgent Enemy;
-    public Transform Player;
-    public Transform Target;
+    public GameObject PlayerObj;
+    public GameObject TargetObj;
 
     void Start()
     {
+        TargetObj = GameObject.FindGameObjectWithTag("Home");
+        PlayerObj = GameObject.FindGameObjectWithTag("Player");
+        Transform Player = PlayerObj.GetComponent<Transform>();
+        Transform Target = TargetObj.GetComponent<Transform>();
         Enemy.SetDestination(Target.position);
         Debug.Log(Target.position);
     }

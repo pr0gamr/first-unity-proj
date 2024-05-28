@@ -26,6 +26,7 @@ public class Shoot : MonoBehaviour
     float ARfireDown;
     float FlameDown;
     float ColdDown;
+    bool topDown;
     public AudioSource source;
     public AudioClip shot;
     public Camera fpsCamera;
@@ -41,6 +42,7 @@ public class Shoot : MonoBehaviour
     {
         if(PlayerVar.GetComponent<Movement>().overHead == false)
         {
+            topDown = false;
             var localOffset = new Vector3(0, 0, 2);
             var worldOffset = barrelEnd.rotation * localOffset;
             var spawnPosition = Player.position + worldOffset;
@@ -195,30 +197,37 @@ public class Shoot : MonoBehaviour
 
                 Camera.main.fieldOfView = m_FieldOfView;
         }
+        else 
+        {
+            topDown = true;
+        }
     }
 
     void OnGUI() 
     {
-        GUI.Label(new Rect(10, 10, 500, 20), "loadout : " + LoadOut.ToString());
-        if(LoadOut == 1)
+        if (topDown == false)
         {
-            GUI.Label(new Rect(10, 25, 500, 20), "Left click : Assault rifle" + " | Right click : Bounce shot");
-        }
-        else if(LoadOut == 2)
-        {
-            GUI.Label(new Rect(10, 25, 500, 20), "Left click : Cannon ball" + " | Right click : Ballista shot");
-        }
-        else if(LoadOut == 3)
-        {
-            GUI.Label(new Rect(10, 25, 500, 20), "Left click : Sniper rifle" + " | Right click : Zoom");
-        }
-        else if(LoadOut == 4)
-        {
-            GUI.Label(new Rect(10, 25, 500, 20), "Left click : rocket" + " | Right click : meator");
-        }
-        else if(LoadOut == 5)
-        {
-            GUI.Label(new Rect(10, 25, 500, 20), "Left click : Flame Thrower" + " | Right click : Cold Thrower");
+            GUI.Label(new Rect(10, 10, 500, 20), "loadout : " + LoadOut.ToString());
+            if(LoadOut == 1)
+            {
+                GUI.Label(new Rect(10, 25, 500, 20), "Left click : Assault rifle" + " | Right click : Bounce shot");
+            }
+            else if(LoadOut == 2)
+            {
+                GUI.Label(new Rect(10, 25, 500, 20), "Left click : Cannon ball" + " | Right click : Ballista shot");
+            }
+            else if(LoadOut == 3)
+            {
+                GUI.Label(new Rect(10, 25, 500, 20), "Left click : Sniper rifle" + " | Right click : Zoom");
+            }
+            else if(LoadOut == 4)
+            {
+                GUI.Label(new Rect(10, 25, 500, 20), "Left click : rocket" + " | Right click : meator");
+            }
+            else if(LoadOut == 5)
+            {
+                GUI.Label(new Rect(10, 25, 500, 20), "Left click : Flame Thrower" + " | Right click : Cold Thrower");
+            }
         }
     }
 

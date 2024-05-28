@@ -869,7 +869,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 8929889152098768875}
-  fireRate: 2
   barrelEnd1: {fileID: 5532301920089749639}
   barrelEnd2: {fileID: 3632574869438105368}
   lineRend: {fileID: 2583676889397537599}
