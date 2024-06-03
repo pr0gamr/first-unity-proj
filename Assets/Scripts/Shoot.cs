@@ -22,11 +22,13 @@ public class Shoot : MonoBehaviour
     public Transform direction;
     float LoadOut = 1;
     float m_FieldOfView = 60.0f;
-    bool reloading;
+    bool reloading = false;
     float ARfireDown;
     float FlameDown;
     float ColdDown;
     bool topDown;
+    float ARfireRate = 6;
+    int test;
     public AudioSource source;
     public AudioClip shot;
     public Camera fpsCamera;
@@ -48,15 +50,13 @@ public class Shoot : MonoBehaviour
             var spawnPosition = Player.position + worldOffset;
 
             m_FieldOfView = 60.0f;
-            if(ARfireDown > 0)
-            {
-                ARfireDown -= 1;
-            }
 
             if (LoadOut == 1)
             {
                 if (Input.GetButton("Fire1") && ARfireDown == 0)
                 {
+                    ARfireDown = 1;
+                    StartCoroutine(ARcooldown());
                    RaycastHit hit; 
                    if(Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit))
                    {
@@ -72,16 +72,16 @@ public class Shoot : MonoBehaviour
                    lineRend.SetPosition(0, gunEnd.position);
                    lineRend.SetPosition(1, hit.point);
                    StartCoroutine(Despawn());
-                    ARfireDown = 10;
+                   
                     if(source != null && !source.isPlaying)
                     {
                         source.clip = shot;
                         source.Play();
                     }
-                    else if(source != null && source.isPlaying)
-                    {
-                        source.Stop();
-                    }
+                    //else if(source != null && source.isPlaying)
+                    //{
+                        //source.Stop();
+                    //}
                 }
                 else if (Input.GetButtonDown("Fire2"))
                 {
@@ -235,5 +235,24 @@ public class Shoot : MonoBehaviour
     {
         yield return new WaitForSeconds(0.02f);
         lineRend.enabled = false;
+    }
+    IEnumerator ARcooldown()
+    {
+        test += 1;
+        if(reloading == false)
+        {
+            reloading = true;
+            StartCoroutine(testingsps());
+        }
+        yield return new WaitForSeconds(60/ARfireRate/60);
+        source.Stop();
+        ARfireDown = 0;
+    }
+    IEnumerator testingsps()
+    {
+        yield return new WaitForSeconds(1);
+        print(test);
+        test = 0;
+        reloading = false;
     }
 }

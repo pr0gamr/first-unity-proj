@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
  
 public class Movement : MonoBehaviour
 {
@@ -52,6 +53,12 @@ public class Movement : MonoBehaviour
  
     void Update()
     {
+        if (Input.GetButtonDown("R"))
+        {
+            var Reload = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(Reload);
+        }
+        
         UpdateMove();
         if(Input.GetButtonDown("View") && overHead == false)
         {

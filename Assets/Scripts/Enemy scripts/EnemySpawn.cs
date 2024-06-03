@@ -33,6 +33,11 @@ public class EnemySpawn : MonoBehaviour
             maxEnemy += Random.Range(3, 10);
             StartCoroutine(enemyTick());
         }
+
+        if (Input.GetButtonDown("Scene1"))
+        {
+            isSetUp = false;
+        }
     }
 
     IEnumerator enemyTick()
