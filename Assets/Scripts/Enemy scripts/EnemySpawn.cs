@@ -59,7 +59,7 @@ public class EnemySpawn : MonoBehaviour
         }
         else
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(Random.Range(0.25f, 1.2f));
             StartCoroutine(enemyTick());
         }
     }

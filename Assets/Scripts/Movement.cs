@@ -104,7 +104,7 @@ public class Movement : MonoBehaviour
                     {
                         Instantiate(turret, hit.point, Quaternion.Euler(0, 0, 0));
                         //Debug.Log(hit.point);
-                        Debug.Log("turmnet");
+                        //Debug.Log("turmnet");
                        // Debug.Log(hit.collider.tag);
                     }
                 }
@@ -172,7 +172,7 @@ public class Movement : MonoBehaviour
         if (isGrounded && Input.GetButtonDown("Jump") && overHead == false)
         {
             velocityY = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            Debug.Log("Jump");
+            //Debug.Log("Jump");
         }
  
         if(isGrounded && controller.velocity.y < -1f)
