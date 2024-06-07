@@ -9,6 +9,7 @@ TagManager:
   - Spawner
   - turret
   - turretplace
+  - Start
   layers:
   - Default
   - TransparentFX
